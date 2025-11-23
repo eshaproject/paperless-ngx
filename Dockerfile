@@ -193,8 +193,7 @@ ARG BUILD_PACKAGES="\
   pkg-config"
 
 # hadolint ignore=DL3042
-RUN --mount=type=cache,target=${UV_CACHE_DIR},id=python-cache \
-  set -eux \
+RUN set -eux \
   && echo "Installing build system packages" \
     && apt-get update \
     && apt-get install --yes --quiet --no-install-recommends ${BUILD_PACKAGES} \
